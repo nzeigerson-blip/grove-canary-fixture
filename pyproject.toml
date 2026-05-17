@@ -1,0 +1,8 @@
+[project]
+name = "grove-canary-fixture"
+version = "0.0.1"
+description = "Grove v2 end-to-end canary fixture (Sprint 13 C2)."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

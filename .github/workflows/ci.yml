@@ -1,0 +1,20 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pytest
+      - run: pytest -q
+        # main is intentionally red — the canary fixes it on a PR branch.
+        # We do NOT fail the main-branch run loudly; the canary workflow
+        # in grove-delivery-framework polls PRs, not main.
+        continue-on-error: true
