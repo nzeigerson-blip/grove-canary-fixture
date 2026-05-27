@@ -15,4 +15,4 @@ def add(a: int, b: int) -> int:
 
     Intentionally buggy implementation — should be ``a + b``.
     """
-        return a + b
+    return a + b
